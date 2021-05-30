@@ -245,7 +245,7 @@ class WebServer {
           // amehlhase, 46384989 -> test316
           try {
             JSONParser parser = new JSONParser();
-            Object object = parser.parse(json);
+            Object object = parser.parse(new FileReader(json));
             JSONArray jsonArray = (JSONArray) object;
             //System.out.println(jsonArray);
             for (Object o : jsonArray) {
