@@ -243,10 +243,11 @@ class WebServer {
           // amehlhase, 46384989 -> ser316examples
           // amehlhase, 46384989 -> test316
           JSONArray jsonArray = new JSONArray(json);
+	  JSONObject jsonObject = new JSONObject();
           for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject jsonObject = jsonArray.getJSONObject(i);
-          }
-          builder.append(jsonObject);
+             jsonObject = jsonArray.getJSONObject(i);
+	  }
+          //builder.append(jsonObject.getString("owner"));
         } else {
           // if the request is not recognized at all
 
