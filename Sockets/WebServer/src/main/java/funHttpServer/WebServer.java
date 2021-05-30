@@ -242,13 +242,13 @@ class WebServer {
           // amehlhase, 46384989 -> memoranda
           // amehlhase, 46384989 -> ser316examples
           // amehlhase, 46384989 -> test316
-          JSONArray jsonArray = new JSONArray(json);
+          JSONArray jsonArray = (JSONArray) json;
 	      //System.out.println(jsonArray);
-          for (int i = 0; i < jsonArray.length(); i++) {
-	        JSONObject jsonObject = jsonArray.getJSONObject(i);
-	        String loginName = jsonObject.getJSONObject("owner").get("login");
-	        Integer ownerId = jsonObject.getJSONObject("owner").get("id");
-	        String repoName = jsonObject.get("name");
+          for (Object o : jsonArray) {
+	        JSONObject jsonObject = (JSONObject) o;
+	        String loginName = (String) jsonObject.get("login");
+	        String ownerId = (String) jsonObject.get("id");
+	        String repoName = (String) jsonObject.get("name");
 	        System.out.print(loginName + ", " + ownerId + "-> " + repoName);
 	      }
         } else {
