@@ -246,12 +246,13 @@ class WebServer {
           try {
             JSONParser parser = new JSONParser();
             Object object = parser.parse(new FileReader(json));
+
             JSONArray jsonArray = (JSONArray) object;
             //System.out.println(jsonArray);
             for (Object o : jsonArray) {
               JSONObject jsonObject = (JSONObject) o;
-              String loginName = (String) jsonObject.get("login");
-              String ownerId = (String) jsonObject.get("id");
+              //String loginName = (String) jsonObject.get("login");
+              //String ownerId = (String) jsonObject.get("id");
               String repoName = (String) jsonObject.get("name");
               System.out.print(loginName + ", " + ownerId + "-> " + repoName);
             }
