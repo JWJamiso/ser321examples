@@ -243,17 +243,21 @@ class WebServer {
           // amehlhase, 46384989 -> memoranda
           // amehlhase, 46384989 -> ser316examples
           // amehlhase, 46384989 -> test316
-          JSONParser parser = new JSONParser();
-          Object object = parser.parse(json);
-          JSONArray jsonArray = (JSONArray) object;
-	      //System.out.println(jsonArray);
-          for (Object o : jsonArray) {
-	        JSONObject jsonObject = (JSONObject) o;
-	        String loginName = (String) jsonObject.get("login");
-	        String ownerId = (String) jsonObject.get("id");
-	        String repoName = (String) jsonObject.get("name");
-	        System.out.print(loginName + ", " + ownerId + "-> " + repoName);
-	      }
+          try {
+            JSONParser parser = new JSONParser();
+            Object object = parser.parse(json);
+            JSONArray jsonArray = (JSONArray) object;
+            //System.out.println(jsonArray);
+            for (Object o : jsonArray) {
+              JSONObject jsonObject = (JSONObject) o;
+              String loginName = (String) jsonObject.get("login");
+              String ownerId = (String) jsonObject.get("id");
+              String repoName = (String) jsonObject.get("name");
+              System.out.print(loginName + ", " + ownerId + "-> " + repoName);
+            }
+          } catch (Exception e) {
+            System.out.println("Error parsing JSON");
+          }
         } else {
           // if the request is not recognized at all
 
