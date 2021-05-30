@@ -18,7 +18,7 @@ package funHttpServer;
 
 import java.io.*;
 import java.net.*;
-import org.json.*;
+import org.json.simple.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
