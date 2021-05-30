@@ -219,7 +219,7 @@ class WebServer {
             builder.append("Content-Type: text/html; charset=utf-8\n");
             builder.append("\n");
             builder.append("One or both of the numbers were not valid");
-            system.out.println("One or both of the numbers were not valid");
+            System.out.println("One or both of the numbers were not valid");
           }
 
         } else if (request.contains("github?")) {
