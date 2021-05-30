@@ -243,13 +243,14 @@ class WebServer {
           // amehlhase, 46384989 -> ser316examples
           // amehlhase, 46384989 -> test316
           JSONArray jsonArray = new JSONArray(json);
-	  for (int i = 0; i < jsonArray.length(); i++) {
-             JSONObject jsonObject = jsonArray.getJSONObject(i);
-	     String loginName = jsonObject.getJSONObject("owner").get("login");
-             Integer ownerId = jsonObject.getJSONObject("owner").get("id");
-             String repoName = jsonObject.get("name");
-             System.out.print(loginName + ", " + ownerId + "-> " + repoName);
-	  }
+	      System.out.println(jsonArray);
+          for (int i = 0; i < jsonArray.length(); i++) {
+	        //JSONObject jsonObject = jsonArray.getJSONObject(i);
+	        //String loginName = jsonObject.getJSONObject("owner").get("login");
+	        //Integer ownerId = jsonObject.getJSONObject("owner").get("id");
+	        //String repoName = jsonObject.get("name");
+	        //System.out.print(loginName + ", " + ownerId + "-> " + repoName);
+	      }
         } else {
           // if the request is not recognized at all
 
