@@ -196,11 +196,11 @@ class WebServer {
         } else if (request.contains("multiply?")) {
           // This multiplies two numbers, there is NO error handling, so when
           // wrong data is given this just crashes
-
+          try {
           Map<String, String> query_pairs = new LinkedHashMap<String, String>();
           // extract path parameters
           query_pairs = splitQuery(request.replace("multiply?", ""));
-          try {
+
             // extract required fields from parameters
             Integer num1 = Integer.parseInt(query_pairs.get("num1"));
             Integer num2 = Integer.parseInt(query_pairs.get("num2"));
@@ -218,8 +218,10 @@ class WebServer {
             builder.append("HTTP/1.1 400 Bad Request\n");
             builder.append("Content-Type: text/html; charset=utf-8\n");
             builder.append("\n");
-            builder.append("One or both of the numbers were not valid");
-            System.out.println("One or both of the numbers were not valid");
+            builder.append("Error 400 Bad Request");
+            builder.append("Couldn't process request due to invalid inputs");
+            System.out.println("Error 400 Bad Request");
+            System.out.println("Couldn't process request due to invalid inputs");
           }
 
         } else if (request.contains("github?")) {
