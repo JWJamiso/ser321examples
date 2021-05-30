@@ -251,11 +251,11 @@ class WebServer {
             //System.out.println(jsonArray);
             for (Object o : jsonArray) {
               JSONObject jsonObject = (JSONObject) o;
-              //String loginName = (String) jsonObject.get("login");
-              //String ownerId = (String) jsonObject.get("id");
+              String loginName = (String) jsonObject.JSONObject("owner").get("login");
+              String ownerId = (String) jsonObject.JSONObject("owner").get("id");
               String repoName = (String) jsonObject.get("name");
-              //System.out.print(loginName + ", " + ownerId + "-> " + repoName);
-              System.out.println(repoName);
+              System.out.print(loginName + ", " + ownerId + "-> " + repoName);
+              //System.out.println(repoName);
             }
           } catch (Exception e) {
             System.out.println("Error parsing JSON");
