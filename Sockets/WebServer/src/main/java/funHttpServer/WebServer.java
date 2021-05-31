@@ -10,7 +10,7 @@ You can also do some other simple GET requests:
    JSON which will for now only be printed in the console. See the todo below
 
 The reading of the request is done "manually", meaning no library that helps making things a 
-little easier is used. This is done so you see exactly how to pars the request and 
+little easier is used. This is https://github.com/JWJamiso/ser321examples.gitdone so you see exactly how to pars the request and
 write a response back
 */
 
@@ -251,9 +251,9 @@ class WebServer {
             //System.out.println(jsonArray);
             for (Object o : jsonArray) {
               JSONObject jsonObject = (JSONObject) o;
-              //JSONObject owner = (JSONObject) jsonObject.get("owner");
-              String loginName = (String) jsonObject.getJSONObject("owner").get("login");
-              String ownerId = (String) jsonObject.getJSONObject("owner").get("id");
+              JSONObject owner = (JSONObject) jsonObject.get("owner");
+              String loginName = (String) owner.get("login");
+              String ownerId = (String) owner.get("id");
               String repoName = (String) jsonObject.get("name");
               System.out.print(loginName + ", " + ownerId + "-> " + repoName);
               //System.out.println(repoName);
