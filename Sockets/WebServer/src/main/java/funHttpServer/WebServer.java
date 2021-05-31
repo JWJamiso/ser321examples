@@ -253,9 +253,9 @@ class WebServer {
               JSONObject jsonObject = (JSONObject) o;
               JSONObject owner = (JSONObject) jsonObject.get("owner");
               String loginName = (String) owner.get("login");
-              Integer ownerId = (Integer) owner.get("id");
+              Integer ownerId = owner.get("id");
               String repoName = (String) jsonObject.get("name");
-              System.out.print(loginName + ", " + ownerId + "-> " + repoName);
+              System.out.print(loginName + ", " + ownerId.toString() + "-> " + repoName);
               //System.out.println(repoName);
             }
           } catch (Exception e) {
