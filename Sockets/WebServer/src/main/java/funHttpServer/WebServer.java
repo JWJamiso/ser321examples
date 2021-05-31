@@ -262,7 +262,7 @@ class WebServer {
               //print each out to console to test
               System.out.print(loginName + ", " + ownerId + " -> " + repoName + "\n");
               builder.append(loginName);
-              builder.append(ownerId);
+              //builder.append(ownerId);
               builder.append(repoName);
             }
           } catch (Exception e) {
