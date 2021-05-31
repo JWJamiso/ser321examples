@@ -244,19 +244,26 @@ class WebServer {
           // amehlhase, 46384989 -> ser316examples
           // amehlhase, 46384989 -> test316
           try {
+            //parser to parse json string
             JSONParser parser = new JSONParser();
             Object object = parser.parse(json);
 
+            //store object into array to iterate
             JSONArray jsonArray = (JSONArray) object;
-            //System.out.println(jsonArray);
             for (Object o : jsonArray) {
+              //grab each JSON object individually
               JSONObject jsonObject = (JSONObject) o;
+              //grab nested JSON object titled 'owner'
               JSONObject owner = (JSONObject) jsonObject.get("owner");
+              //grab loginName, ownerId, and repository name for each repo
               String loginName = (String) owner.get("login");
               Long ownerId = (Long) owner.get("id");
               String repoName = (String) jsonObject.get("name");
-              System.out.print(loginName + ", " + ownerId + "-> " + repoName + "\n");
-              //System.out.println(repoName);
+              //print each out to console to test
+              System.out.print(loginName + ", " + ownerId + " -> " + repoName + "\n");
+              builder.append(loginName);
+              builder.append(ownerId+"");
+              builder.append(repoName);
             }
           } catch (Exception e) {
             System.out.println("Error parsing JSON");
