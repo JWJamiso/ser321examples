@@ -243,6 +243,9 @@ class WebServer {
           // amehlhase, 46384989 -> memoranda
           // amehlhase, 46384989 -> ser316examples
           // amehlhase, 46384989 -> test316
+          builder.append("HTTP/1.1 200 OK\n");
+          builder.append("Content-Type: text/html; charset=utf-8\n");
+          builder.append("\n");
           try {
             //parser to parse json string
             JSONParser parser = new JSONParser();
@@ -265,9 +268,6 @@ class WebServer {
               builder.append(ownerId.toString());
               builder.append(repoName);
             }
-            builder.append("HTTP/1.1 200 OK\n");
-            builder.append("Content-Type: text/html; charset=utf-8\n");
-            builder.append("\n");
           } catch (Exception e) {
             System.out.println("Error parsing JSON");
           }
