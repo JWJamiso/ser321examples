@@ -250,6 +250,9 @@ class WebServer {
 
             //store object into array to iterate
             JSONArray jsonArray = (JSONArray) object;
+            builder.append("HTTP/1.1 200 OK\n");
+            builder.append("Content-Type: text/html; charset=utf-8\n");
+            builder.append("\n");
             for (Object o : jsonArray) {
               //grab each JSON object individually
               JSONObject jsonObject = (JSONObject) o;
@@ -268,9 +271,6 @@ class WebServer {
           } catch (Exception e) {
             System.out.println("Error parsing JSON");
           }
-          builder.append("HTTP/1.1 200 OK\n");
-          builder.append("Content-Type: text/html; charset=utf-8\n");
-          builder.append("\n");
         } else {
           // if the request is not recognized at all
 
