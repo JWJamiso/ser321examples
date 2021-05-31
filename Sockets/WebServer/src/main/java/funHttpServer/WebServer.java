@@ -264,10 +264,8 @@ class WebServer {
               String repoName = (String) jsonObject.get("name");
               //print each out to console to test
               System.out.print(loginName + ", " + ownerId + " -> " + repoName + "\n");
-              //builder.append(loginName + ", " + ownerId + " -> " + repoName + "\n");
-              builder.append(loginName + ", ");
-              builder.append(ownerId + " -> ");
-              builder.append(repoName + "\n");
+              builder.append(loginName + ", " + ownerId + " -> " + repoName + "\n");
+              builder.append("\n");
             }
           } catch (Exception e) {
             System.out.println("Error parsing JSON");
