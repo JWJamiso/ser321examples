@@ -243,6 +243,9 @@ class WebServer {
           // amehlhase, 46384989 -> memoranda
           // amehlhase, 46384989 -> ser316examples
           // amehlhase, 46384989 -> test316
+          builder.append("HTTP/1.1 200 OK\n");
+          builder.append("Content-Type: text/html; charset=utf-8\n");
+          builder.append("\n");
           try {
             //parser to parse json string
             JSONParser parser = new JSONParser();
@@ -250,9 +253,6 @@ class WebServer {
 
             //store object into array to iterate
             JSONArray jsonArray = (JSONArray) object;
-            builder.append("HTTP/1.1 200 OK\n");
-            builder.append("Content-Type: text/html; charset=utf-8\n");
-            builder.append("\n");
             for (Object o : jsonArray) {
               //grab each JSON object individually
               JSONObject jsonObject = (JSONObject) o;
