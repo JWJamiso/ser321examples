@@ -255,7 +255,7 @@ class WebServer {
               String loginName = (String) owner.get("login");
               Long ownerId = (Long) owner.get("id");
               String repoName = (String) jsonObject.get("name");
-              System.out.print(loginName + ", " + ownerId + "-> " + repoName);
+              System.out.print(loginName + ", " + ownerId + "-> " + repoName + "\n");
               //System.out.println(repoName);
             }
           } catch (Exception e) {
