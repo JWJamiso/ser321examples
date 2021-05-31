@@ -261,7 +261,7 @@ class WebServer {
               String repoName = (String) jsonObject.get("name");
               //print each out to console to test
               System.out.print(loginName + ", " + ownerId + " -> " + repoName + "\n");
-              builder.append("HTTP/1.1 200 OK");
+              builder.append("HTTP/1.1 200 OK\n");
               builder.append("Content-type: text/html; charset=utf-8\n");
               builder.append("\n");
               builder.append(loginName);
